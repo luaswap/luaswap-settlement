@@ -1,0 +1,1073 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/interfaces/ISettlement.sol": {
+      "lastModificationDate": 1616397975290,
+      "contentHash": "36cb9ea3f8d2274afad8e5194299b068",
+      "sourceName": "contracts/interfaces/ISettlement.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/Orders.sol"
+      ],
+      "versionPragmas": [
+        "^0.6.0"
+      ],
+      "artifacts": [
+        "ISettlement"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/libraries/Orders.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "3d71c4100b642daf527e6e4d6de732d1",
+      "sourceName": "contracts/libraries/Orders.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "Orders"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/Settlement.sol": {
+      "lastModificationDate": 1616397975290,
+      "contentHash": "cd4ff905d402b96a26414b431796a10e",
+      "sourceName": "contracts/Settlement.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol",
+        "@sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.sol",
+        "@sushiswap/core/contracts/uniswapv2/libraries/UniswapV2Library.sol",
+        "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol",
+        "./interfaces/ISettlement.sol",
+        "./libraries/Orders.sol",
+        "./libraries/EIP712.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "Settlement"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/node_modules/@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol": {
+      "lastModificationDate": 1616398466529,
+      "contentHash": "35c589973c3d246950ab64d2f23d59d4",
+      "sourceName": "@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "SafeMathUniswap"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/node_modules/@sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1616398466529,
+      "contentHash": "3c1a6bb1e681b5aa02aaf54731f6970f",
+      "sourceName": "@sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/node_modules/@sushiswap/core/contracts/uniswapv2/libraries/UniswapV2Library.sol": {
+      "lastModificationDate": 1616398466530,
+      "contentHash": "86fd1ccb6ab641d2971e5f78dc34e095",
+      "sourceName": "@sushiswap/core/contracts/uniswapv2/libraries/UniswapV2Library.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IUniswapV2Pair.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "UniswapV2Library"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/node_modules/@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol": {
+      "lastModificationDate": 1616398466529,
+      "contentHash": "e1618a34e4b67aedf5e9dfe4c83adc7b",
+      "sourceName": "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC20Uniswap"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/libraries/EIP712.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "ba04689b38a8adf5a04111251929570d",
+      "sourceName": "contracts/libraries/EIP712.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "EIP712"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/node_modules/@sushiswap/core/contracts/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1616398466530,
+      "contentHash": "f752430d5f09b9f563592f001dafc406",
+      "sourceName": "@sushiswap/core/contracts/uniswapv2/interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/OrderBook.sol": {
+      "lastModificationDate": 1616400404234,
+      "contentHash": "14ada23fee6f0b85fa200c33b5b95a0f",
+      "sourceName": "contracts/OrderBook.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol",
+        "./libraries/Orders.sol",
+        "./libraries/EIP712.sol",
+        "./libraries/Bytes32Pagination.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "OrderBook"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/libraries/Bytes32Pagination.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "ba01b1c6046aab91923c57ccd3a15ef6",
+      "sourceName": "contracts/libraries/Bytes32Pagination.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "Bytes32Pagination"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/MockERC20.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "7aac19c87fb515d73dcd6ee0ebe62669",
+      "sourceName": "contracts/mock/MockERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "MockERC20"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/SettlementCaller.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "53a839d58c0f512b06a126c9d39cc42d",
+      "sourceName": "contracts/mock/SettlementCaller.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/ISettlement.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "SettlementCaller"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IERC20.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "e0b29a16b2fb8252ee69005954fa313a",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IERC20Uniswap"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/UniswapV2Router02.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "540762b38db2dbfb0f655fd73754727d",
+      "sourceName": "contracts/mock/uniswapv2/UniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./libraries/UniswapV2Library.sol",
+        "./libraries/SafeMath.sol",
+        "./libraries/TransferHelper.sol",
+        "./interfaces/IUniswapV2Router02.sol",
+        "./interfaces/IUniswapV2Factory.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "UniswapV2Router02"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/libraries/UniswapV2Library.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "783a2e1241669437ff75b81fa4f13a9d",
+      "sourceName": "contracts/mock/uniswapv2/libraries/UniswapV2Library.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IUniswapV2Pair.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "UniswapV2Library"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/libraries/SafeMath.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "4f75a45b7afd444778242f7cadc958ce",
+      "sourceName": "contracts/mock/uniswapv2/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "SafeMathUniswap"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "19a3282b54b60568d32a3ed9d5139688",
+      "sourceName": "contracts/mock/uniswapv2/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2Router02.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "7afdfe3a9a38ef3189cbbefa87c406ee",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IUniswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router02"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2Factory.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "f6f1c7e20ee545a1e58a1d1e9a42d5a9",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Factory"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IWETH.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "3b6bffcaff1fb96e53f76769ea3ab073",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IWETH.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "1666c30d0371a67212020bf17595faf3",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2Router01.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "918eb263e7362a2d2d4daec73ba9bb79",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IUniswapV2Router01"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/UniswapV2Pair.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "66e7e0c6e0aca72e8f34e432994ee142",
+      "sourceName": "contracts/mock/uniswapv2/UniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./UniswapV2ERC20.sol",
+        "./libraries/Math.sol",
+        "./libraries/UQ112x112.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IUniswapV2Factory.sol",
+        "./interfaces/IUniswapV2Callee.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "IMigrator",
+        "UniswapV2Pair"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/UniswapV2ERC20.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "ed4bb0bba1895b4b65268488ad19643a",
+      "sourceName": "contracts/mock/uniswapv2/UniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "UniswapV2ERC20"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/libraries/Math.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "baf379a423703ab9c461df6c94d3223b",
+      "sourceName": "contracts/mock/uniswapv2/libraries/Math.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/libraries/UQ112x112.sol": {
+      "lastModificationDate": 1616397975293,
+      "contentHash": "639ce33a08513df00d4aa7f2e8bf662f",
+      "sourceName": "contracts/mock/uniswapv2/libraries/UQ112x112.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "UQ112x112"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2Callee.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "00942ffe58b056fbc493daa1f9f253ea",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2Callee.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Callee"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/UniswapV2Factory.sol": {
+      "lastModificationDate": 1616397975291,
+      "contentHash": "34f4b4fdb581b99f259e5fe73278c0c0",
+      "sourceName": "contracts/mock/uniswapv2/UniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2Factory.sol",
+        "./UniswapV2Pair.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "UniswapV2Factory"
+      ]
+    },
+    "/Users/nguyentien/Documents/GitHub/sushiswap-settlement/contracts/mock/uniswapv2/interfaces/IUniswapV2ERC20.sol": {
+      "lastModificationDate": 1616397975292,
+      "contentHash": "b7dc15d4067c389d45b7f65050ae1922",
+      "sourceName": "contracts/mock/uniswapv2/interfaces/IUniswapV2ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2ERC20"
+      ]
+    }
+  }
+}
