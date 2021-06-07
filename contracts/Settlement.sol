@@ -5,9 +5,11 @@ pragma experimental ABIEncoderV2;
 
 import "@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol";
 import "@sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.sol";
-import "pancakeswap-peripheral/contracts/libraries/PancakeLibrary.sol";
+import "@sushiswap/core/contracts/uniswapv2/libraries/UniswapV2Library.sol";
 import "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol";
+
 import "./interfaces/ISettlement.sol";
+import "./interfaces/IOrderBook.sol";
 import "./libraries/Orders.sol";
 import "./libraries/EIP712.sol";
 import "./libraries/Bytes32Pagination.sol";
@@ -27,10 +29,15 @@ contract Settlement is ISettlement {
     mapping(bytes32 => uint256) public filledAmountInOfHash;
 
     address public immutable factory;
+    IUniswapV2Router02 public routerv2;
+    IUniswapV2Factory public factory;
+
+    address public orderBookAddress;
+    address public orderBookChainId;
 
     constructor(
-        uint256 orderBookChainId,
-        address orderBookAddress,
+        uint256 _orderBookChainId,
+        address _orderBookAddress,
         address _factory
     ) public {
         DOMAIN_SEPARATOR = keccak256(
@@ -38,10 +45,12 @@ contract Settlement is ISettlement {
                 keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
                 keccak256("OrderBook"),
                 keccak256("1"),
-                orderBookChainId,
-                orderBookAddress
+                _orderBookChainId,
+                _orderBookAddress
             )
         );
+        orderBookAddress = _orderBookAddress;
+        orderBookChainId = _orderBookChainId;
 
         factory = _factory;
     }
@@ -61,9 +70,14 @@ contract Settlement is ISettlement {
             return 0;
         }
 
-        // Check if the signature is valid
-        address signer = EIP712.recover(DOMAIN_SEPARATOR, hash, args.order.v, args.order.r, args.order.s);
-        require(signer != address(0) && signer == args.order.maker, "invalid-signature");
+        if (args.order.v == 0 && bytes32(args.order.r) == bytes32(0) && bytes32(args.order.s) == bytes32(0)) {
+            Order _order = IOrderBook(orderBookAddress).orderOfHash(hash);
+            _order.validate();
+        }
+        else {
+            address signer = EIP712.recover(DOMAIN_SEPARATOR, hash, args.order.v, args.order.r, args.order.s);
+            require(signer != address(0) && signer == args.order.maker, "invalid-signature");
+        }
 
         // Calculates amountOutMin
         uint256 amountOutMin = (args.order.amountOutMin.mul(args.amountToFillIn) / args.order.amountIn);
@@ -118,14 +132,14 @@ contract Settlement is ISettlement {
         address[] memory path,
         address to
     ) internal returns (uint256 amountOut) {
-        uint256[] memory amounts = PancakeLibrary.getAmountsOut(factory, amountIn, path);
+        uint256[] memory amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
         if (amounts[amounts.length - 1] < amountOutMin) {
             return 0;
         }
         TransferHelper.safeTransferFrom(
             path[0],
             from,
-            PancakeLibrary.pairFor(factory, path[0], path[1]),
+            UniswapV2Library.pairFor(factory, path[0], path[1]),
             amountIn
         );
         _swap(amounts, path, to);
@@ -140,13 +154,13 @@ contract Settlement is ISettlement {
     ) internal virtual {
         for (uint256 i; i < path.length - 1; i++) {
             (address input, address output) = (path[i], path[i + 1]);
-            (address token0, ) = PancakeLibrary.sortTokens(input, output);
+            (address token0, ) = UniswapV2Library.sortTokens(input, output);
             uint256 amountOut = amounts[i + 1];
             (uint256 amount0Out, uint256 amount1Out) = input == token0
                 ? (uint256(0), amountOut)
                 : (amountOut, uint256(0));
-            address to = i < path.length - 2 ? PancakeLibrary.pairFor(factory, output, path[i + 2]) : _to;
-            IPancakePair(PancakeLibrary.pairFor(factory, input, output)).swap(
+            address to = i < path.length - 2 ? UniswapV2Library.pairFor(factory, output, path[i + 2]) : _to;
+            IUniswapV2Pair(UniswapV2Library.pairFor(factory, input, output)).swap(
                 amount0Out,
                 amount1Out,
                 to,
