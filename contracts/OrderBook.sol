@@ -3,7 +3,6 @@
 pragma solidity =0.6.12;
 pragma experimental ABIEncoderV2;
 
-import "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol";
 import "./libraries/Orders.sol";
 import "./libraries/EIP712.sol";
 import "./libraries/Bytes32Pagination.sol";
@@ -99,6 +98,8 @@ contract OrderBook {
     // Creates an order
     function createOrder(Orders.Order memory order) public {
         order.validate();
+        
+        bytes32 hash = order.hash();
 
         if (order.v == 0 && bytes32(order.r) == bytes32(0) && bytes32(order.s) == bytes32(0)) {
             require(order.maker == msg.sender, "invalid signer");
@@ -107,8 +108,6 @@ contract OrderBook {
             address signer = EIP712.recover(DOMAIN_SEPARATOR, hash, order.v, order.r, order.s);
             require(signer != address(0) && signer == order.maker, "invalid-signature");
         }
-        
-        bytes32 hash = order.hash();
         
         require(orderOfHash[hash].maker == address(0), "order-exists");
         orderOfHash[hash] = order;

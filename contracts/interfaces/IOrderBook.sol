@@ -7,5 +7,5 @@ import "../libraries/Orders.sol";
 
 interface IOrderBook {
     function createOrder(Orders.Order memory order) external;
-    function orderOfHash(bytes32  hash) external returns (Orders.Order);
+    function orderOfHash(bytes32 hash) external returns (Orders.Order memory);
 }

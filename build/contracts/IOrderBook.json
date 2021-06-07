@@ -1,0 +1,625 @@
+{
+  "contractName": "IOrderBook",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "maker",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "fromToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "toToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountIn",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountOutMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "v",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "r",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "s",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct Orders.Order",
+          "name": "order",
+          "type": "tuple"
+        }
+      ],
+      "name": "createOrder",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "orderOfHash",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "maker",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "fromToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "toToken",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountIn",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amountOutMin",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint8",
+              "name": "v",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "r",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "s",
+              "type": "bytes32"
+            }
+          ],
+          "internalType": "struct Orders.Order",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"maker\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fromToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"toToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"internalType\":\"struct Orders.Order\",\"name\":\"order\",\"type\":\"tuple\"}],\"name\":\"createOrder\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"hash\",\"type\":\"bytes32\"}],\"name\":\"orderOfHash\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"maker\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"fromToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"toToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOutMin\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"internalType\":\"struct Orders.Order\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/tung/work/luaswap-settlement/contracts/interfaces/IOrderBook.sol\":\"IOrderBook\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tung/work/luaswap-settlement/contracts/interfaces/IOrderBook.sol\":{\"keccak256\":\"0xe4814693acda6e8c4a6c2c520f82d037515c2286d4f7bc3fc9fdaa22d4472445\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://af464200e7a5477be0ae064a0c7980a5bef56f689eafb15e3193d081200a8bd1\",\"dweb:/ipfs/QmRMEnxH7Lrse3RBh9KLEqzRYJzgP3Dy16VvAGNoza3b19\"]},\"/Users/tung/work/luaswap-settlement/contracts/libraries/Orders.sol\":{\"keccak256\":\"0x4a9764f49654a041c234873ce372f3c53799dd13aca40ce38926ddf6cd63635a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://60a860eb6b7c62840822f5df903e7e76e39493122df77ee10756d06547cad8a9\",\"dweb:/ipfs/QmaKQpkw848WPi3U26kLWDtqUWbuW7uk8ghvNSALycC3K8\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.0;\npragma experimental ABIEncoderV2;\n\nimport \"../libraries/Orders.sol\";\n\ninterface IOrderBook {\n    function createOrder(Orders.Order memory order) external;\n    function orderOfHash(bytes32 hash) external returns (Orders.Order memory);\n}\n",
+  "sourcePath": "/Users/tung/work/luaswap-settlement/contracts/interfaces/IOrderBook.sol",
+  "ast": {
+    "absolutePath": "/Users/tung/work/luaswap-settlement/contracts/interfaces/IOrderBook.sol",
+    "exportedSymbols": {
+      "IOrderBook": [
+        1055
+      ]
+    },
+    "id": 1056,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1040,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "id": 1041,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:33:2"
+      },
+      {
+        "absolutePath": "/Users/tung/work/luaswap-settlement/contracts/libraries/Orders.sol",
+        "file": "../libraries/Orders.sol",
+        "id": 1042,
+        "nodeType": "ImportDirective",
+        "scope": 1056,
+        "sourceUnit": 1365,
+        "src": "92:33:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1055,
+        "linearizedBaseContracts": [
+          1055
+        ],
+        "name": "IOrderBook",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "d08b34bb",
+            "id": 1047,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createOrder",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1045,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1044,
+                  "mutability": "mutable",
+                  "name": "order",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1047,
+                  "src": "175:25:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Order_$1251_memory_ptr",
+                    "typeString": "struct Orders.Order"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1043,
+                    "name": "Orders.Order",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1251,
+                    "src": "175:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Order_$1251_storage_ptr",
+                      "typeString": "struct Orders.Order"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "174:27:2"
+            },
+            "returnParameters": {
+              "id": 1046,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "210:0:2"
+            },
+            "scope": 1055,
+            "src": "154:57:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "bceb45db",
+            "id": 1054,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "orderOfHash",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1049,
+                  "mutability": "mutable",
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1054,
+                  "src": "237:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1048,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "237:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "236:14:2"
+            },
+            "returnParameters": {
+              "id": 1053,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1052,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1054,
+                  "src": "269:19:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Order_$1251_memory_ptr",
+                    "typeString": "struct Orders.Order"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 1051,
+                    "name": "Orders.Order",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1251,
+                    "src": "269:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Order_$1251_storage_ptr",
+                      "typeString": "struct Orders.Order"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "268:21:2"
+            },
+            "scope": 1055,
+            "src": "216:74:2",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1056,
+        "src": "127:165:2"
+      }
+    ],
+    "src": "33:260:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/tung/work/luaswap-settlement/contracts/interfaces/IOrderBook.sol",
+      "exportedSymbols": {
+        "IOrderBook": [
+          1055
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 1040,
+        "name": "PragmaDirective",
+        "src": "33:23:2"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 1041,
+        "name": "PragmaDirective",
+        "src": "57:33:2"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1365,
+          "absolutePath": "/Users/tung/work/luaswap-settlement/contracts/libraries/Orders.sol",
+          "file": "../libraries/Orders.sol",
+          "scope": 1056,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1042,
+        "name": "ImportDirective",
+        "src": "92:33:2"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            1055
+          ],
+          "name": "IOrderBook",
+          "scope": 1056
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "d08b34bb",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createOrder",
+              "overrides": null,
+              "scope": 1055,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "order",
+                      "overrides": null,
+                      "scope": 1047,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Orders.Order",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Orders.Order",
+                          "referencedDeclaration": 1251,
+                          "type": "struct Orders.Order"
+                        },
+                        "id": 1043,
+                        "name": "UserDefinedTypeName",
+                        "src": "175:12:2"
+                      }
+                    ],
+                    "id": 1044,
+                    "name": "VariableDeclaration",
+                    "src": "175:25:2"
+                  }
+                ],
+                "id": 1045,
+                "name": "ParameterList",
+                "src": "174:27:2"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 1046,
+                "name": "ParameterList",
+                "src": "210:0:2"
+              }
+            ],
+            "id": 1047,
+            "name": "FunctionDefinition",
+            "src": "154:57:2"
+          },
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "functionSelector": "bceb45db",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "orderOfHash",
+              "overrides": null,
+              "scope": 1055,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "hash",
+                      "overrides": null,
+                      "scope": 1054,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 1048,
+                        "name": "ElementaryTypeName",
+                        "src": "237:7:2"
+                      }
+                    ],
+                    "id": 1049,
+                    "name": "VariableDeclaration",
+                    "src": "237:12:2"
+                  }
+                ],
+                "id": 1050,
+                "name": "ParameterList",
+                "src": "236:14:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 1054,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "struct Orders.Order",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Orders.Order",
+                          "referencedDeclaration": 1251,
+                          "type": "struct Orders.Order"
+                        },
+                        "id": 1051,
+                        "name": "UserDefinedTypeName",
+                        "src": "269:12:2"
+                      }
+                    ],
+                    "id": 1052,
+                    "name": "VariableDeclaration",
+                    "src": "269:19:2"
+                  }
+                ],
+                "id": 1053,
+                "name": "ParameterList",
+                "src": "268:21:2"
+              }
+            ],
+            "id": 1054,
+            "name": "FunctionDefinition",
+            "src": "216:74:2"
+          }
+        ],
+        "id": 1055,
+        "name": "ContractDefinition",
+        "src": "127:165:2"
+      }
+    ],
+    "id": 1056,
+    "name": "SourceUnit",
+    "src": "33:260:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-06-07T04:33:43.600Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -35,7 +35,7 @@ library Orders {
             );
     }
 
-    function validate(Order memory order) internal {
+    function validate(Order memory order) internal pure {
         require(order.maker != address(0), "invalid-maker");
         require(order.fromToken != address(0), "invalid-from-token");
         require(order.toToken != address(0), "invalid-to-token");

@@ -3,10 +3,8 @@
 pragma solidity =0.6.12;
 pragma experimental ABIEncoderV2;
 
-import "@sushiswap/core/contracts/uniswapv2/libraries/SafeMath.sol";
-import "@sushiswap/core/contracts/uniswapv2/libraries/TransferHelper.sol";
-import "@sushiswap/core/contracts/uniswapv2/libraries/UniswapV2Library.sol";
-import "@sushiswap/core/contracts/uniswapv2/interfaces/IERC20.sol";
+import "./uniswapv2/libraries/TransferHelper.sol";
+import "./uniswapv2/libraries/UniswapV2Library.sol";
 
 import "./interfaces/ISettlement.sol";
 import "./interfaces/IOrderBook.sol";
@@ -16,7 +14,7 @@ import "./libraries/Bytes32Pagination.sol";
 import "./libraries/Verifier.sol";
 
 contract Settlement is ISettlement {
-    using SafeMathUniswap for uint256;
+    using SafeMath for uint256;
     using Orders for Orders.Order;
     using Bytes32Pagination for bytes32[];
 
@@ -29,11 +27,9 @@ contract Settlement is ISettlement {
     mapping(bytes32 => uint256) public filledAmountInOfHash;
 
     address public immutable factory;
-    IUniswapV2Router02 public routerv2;
-    IUniswapV2Factory public factory;
 
     address public orderBookAddress;
-    address public orderBookChainId;
+    uint256 public orderBookChainId;
 
     constructor(
         uint256 _orderBookChainId,
@@ -66,12 +62,12 @@ contract Settlement is ISettlement {
         _validateStatus(args, hash);
 
         // Check if the order is valid
-        if (!_validateArgs(args, hash)) {
+        if (!_validateArgs(args)) {
             return 0;
         }
 
         if (args.order.v == 0 && bytes32(args.order.r) == bytes32(0) && bytes32(args.order.s) == bytes32(0)) {
-            Order _order = IOrderBook(orderBookAddress).orderOfHash(hash);
+            Orders.Order memory _order = IOrderBook(orderBookAddress).orderOfHash(hash);
             _order.validate();
         }
         else {
@@ -100,7 +96,7 @@ contract Settlement is ISettlement {
     }
 
     // Checks if an order is valid - if it contains all the information required
-    function _validateArgs(FillOrderArgs memory args, bytes32 hash) internal view returns (bool) {
+    function _validateArgs(FillOrderArgs memory args) internal view returns (bool) {
         return
             args.order.maker != address(0) &&
             args.order.fromToken != address(0) &&
@@ -116,7 +112,7 @@ contract Settlement is ISettlement {
             args.order.toToken == args.path[args.path.length - 1];
     }
 
-    function _validateStatus(FillOrderArgs memory args, bytes32 hash) internal {
+    function _validateStatus(FillOrderArgs memory args, bytes32 hash) internal view {
         require(args.order.deadline >= block.timestamp, "order-expired");
         require(!canceledOfHash[args.order.maker][hash], "order-canceled");
         require(filledAmountInOfHash[hash].add(args.amountToFillIn) <= args.order.amountIn, "already-filled");
@@ -132,7 +128,7 @@ contract Settlement is ISettlement {
         address[] memory path,
         address to
     ) internal returns (uint256 amountOut) {
-        uint256[] memory amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path);
+        uint256[] memory amounts = UniswapV2Library.getAmountsOut(factory, amountIn, path, IUniswapV2Factory(factory).swapFee());
         if (amounts[amounts.length - 1] < amountOutMin) {
             return 0;
         }
