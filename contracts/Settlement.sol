@@ -21,6 +21,10 @@ contract Settlement is ISettlement {
     // solhint-disable-next-line var-name-mixedcase
     bytes32 public immutable DOMAIN_SEPARATOR;
 
+    // Array of hashes of all canceled orders
+    bytes32[] internal _allCanceledHashes;
+    // Address of order maker => canceled hashes (orders)
+    mapping(address => bytes32[]) internal _canceledHashesOfMaker;
     // Hash of an order => if canceled
     mapping(address => mapping(bytes32 => bool)) public canceledOfHash;
     // Hash of an order => filledAmountIn
@@ -49,6 +53,30 @@ contract Settlement is ISettlement {
         orderBookChainId = _orderBookChainId;
 
         factory = _factory;
+    }
+
+    // Return an array of canceled hashes
+    function allCanceledHashes(uint256 page, uint256 limit) public view returns (bytes32[] memory) {
+        return _allCanceledHashes.paginate(page, limit);
+    }
+
+    // Returns an array of hashes of canceled orders of a maker
+    function canceledHashesOfMaker(
+        address maker,
+        uint256 page,
+        uint256 limit
+    ) public view returns (bytes32[] memory) {
+        return _canceledHashesOfMaker[maker].paginate(page, limit);
+    }
+
+    // Returns the number of canceled orders
+    function numberOfAllCanceledHashes() public view returns (uint256) {
+        return _allCanceledHashes.length;
+    }
+
+    // Returns the number of canceled orders of a maker
+    function numberOfCanceledHashesOfMaker(address maker) public view returns (uint256) {
+        return _canceledHashesOfMaker[maker].length;
     }
 
     // Fills an order
@@ -187,6 +215,9 @@ contract Settlement is ISettlement {
     // Cancels an order, has to been called by order maker
     function cancelOrder(bytes32 hash, address maker) public override {
         require(msg.sender == maker, "not-called-by-maker");
+
+        _allCanceledHashes.push(hash);
+        _canceledHashesOfMaker[maker].push(hash);
         canceledOfHash[msg.sender][hash] = true;
 
         emit OrderCanceled(hash);
